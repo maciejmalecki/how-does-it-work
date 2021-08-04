@@ -1,40 +1,163 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+  <title>How does it work?</title>
+  
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/night.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+<body>
+<div class="reveal">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- 45 mins slides + 10-15 mins QA, 22-24 slides total -->
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <div class="slides">
+    <section data-background-image="img/hal-2001.jpg" data-background-opacity="0.6">
+      <h1>Computer</h1>
+      <h2>How does it work?</h2>
+      <h4>from microcomputer to microcontroller</h4>
+      <div class="signature">Maciej Małecki, Capgemini IoT Community, Wrocław 2021.</div>
+    </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <!-- #1 -->
+    <section>
+      <h3>Motivation</h3>
+      <div class="r-hstack">
+        <img src="img/c64-pcb.jpg" alt="C64 PCB" style="height: 450px;">
+        <div class="fragment" data-fragment-index="1">&rarr;</div>
+        <img class="fragment" data-fragment-index="1" src="img/c64-fixed.jpg" alt="C64 PCB" style="height: 450px;">
+      </div>
+    </section>
+
+    <!-- #2 -->
+    <section>
+      <h2 class="r-fit-text">is this presentation</h2>
+      <h2 class="r-fit-text">for me?</h2>
+    </section>
+
+    <!-- #2 -->
+    <section>
+      <p>Why microcomputer term is extinct?</p>
+      <p>Free chat on mainframe, minicomputers, microprocessors</p>
+    </section>
+
+    <!-- #3 -->
+    <section>
+      <p>First microprocessors</p>
+      <p>Roughly on what is the difference</p>
+      <p>Major compounds of CPU</p>
+    </section>
+
+    <!-- #4 -->
+    <section>
+      <p>Cheap microprocessors: 6502, Z80</p>
+      <p>Beyond microcontrollers</p>
+    </section>
+
+    <!-- #5 -->
+    <section>
+      <p>KIM-1 and 6502</p>
+      <p>Take closer look</p>
+    </section>
+
+    <!-- #6 -->
+    <section>
+      <p>KIM-1 vs AtMega 328p</p>
+    </section>
+
+    <!-- #7 -->
+    <section>
+      <p>8bits, 16bits, 64bits</p>
+      <p>Data bus width</p>
+    </section>
+
+    <!-- #8 -->
+    <section>
+      <p>Memory addressing</p>
+      <p>Address bus width</p>
+    </section>
+
+    <!-- #9 -->
+    <section>
+      <p>Architectures</p>
+      <ul>
+        <li>Harvard</li>
+        <li>von Neumann</li>
+      </ul>
+    </section>
+
+    <!-- #10, #11 -->
+    <section>
+      <p>IO handling</p>
+      <ul>
+        <li>Motorola style vs Intel style</li>
+        <li>IO ports</li>
+        <li>Pull up registers</li>
+      </ul>
+    </section>
+
+    <!-- #12, #13 -->
+    <section>
+      <p>ALU</p>
+    </section>
+
+    <!-- #14, #15, #16 -->
+    <section>
+      <p>Code execution</p>
+      <ul>
+        <li>Machine code</li>
+        <li>Machine instruction</li>
+        <li>Instruction decoding</li>
+        <li>Instruction counter</li>
+      </ul>
+    </section>
+
+    <!-- #17, #18 -->
+    <section>
+      <p>Interrupts</p>
+    </section>
+
+    <!-- Sources, reference -->
+    <section>
+      <h3>Sources</h3>
+      <ul>
+        <li>
+          <a href="http://www.erich-foltyn.eu/Technique/6502.html">http://www.erich-foltyn.eu/Technique/6502.html</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- LAST -->
+    <section>
+      <p>QA, QR code</p>
+    </section>
+
+  </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/chalkboard/plugin.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealChalkboard]
+    });
+</script>
+</body>
 </html>
