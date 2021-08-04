@@ -3,3 +3,7 @@
     font-size: 0.6em;
     text-align: right;
 }
+
+.hide {
+    display: none;
+}
