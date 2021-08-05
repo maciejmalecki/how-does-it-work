@@ -7,3 +7,11 @@
 .hide {
     display: none;
 }
+
+.h-med {
+    height: 3500px;
+}
+
+.h-norm {
+    height: 400px;
+}

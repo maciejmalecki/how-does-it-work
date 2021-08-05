@@ -62,15 +62,24 @@
 
     <section>
       <h3>Altair 8800</h3>
-      <img src="img/798px-Altair_8800_Computer.jpg" alt="Altair 8800" style="height: 400px;">
+      <div class="r-hstack">
+        <img src="img/798px-Altair_8800_Computer.jpg" alt="Altair 8800" class="h-norm">
+        <img src="img/bill-gates.jpeg" alt="Bill" class="fragment h-norm">
+      </div>
       <p class="hide">
         By Swtpc6800 en:User:Swtpc6800 Michael Holley - Transfered from en.wikipedia, Public Domain, https://commons.wikimedia.org/w/index.php?curid=3185062
+        https://www.tempton.de/next-level/blog/bill-gates-der-moment-wenn-microsoft-die-kleinste-sorge-ist
       </p>
     </section>
 
     <section>
-      <img src="img/altair-8800-front-panel-1.jpg" alt="Altair front panel">
-      <a href="https://bobyewchuk.wordpress.com/2015/01/06/altair-8800/">https://bobyewchuk.wordpress.com/2015/01/06/altair-8800/</a> 
+        <img src="img/altair-8800-front-panel-1.jpg" alt="Altair front panel">
+        <p>
+          <a href="https://bobyewchuk.wordpress.com/2015/01/06/altair-8800/">https://bobyewchuk.wordpress.com/2015/01/06/altair-8800/</a> 
+        </p>
+        <p>
+          <a href="https://s2js.com/altair/sim.html">https://s2js.com/altair/sim.html</a>
+        </p>
     </section>
 
     <!-- #3 -->
@@ -184,6 +193,8 @@
     // - https://revealjs.com/config/
     Reveal.initialize({
         hash: true,
+        navigationMode: 'linear',
+        slideNumber: 'c/t',
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealChalkboard]
