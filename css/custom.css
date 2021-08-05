@@ -7,12 +7,22 @@
 .hide {
     display: none;
 }
-
-.h-med {
-    height: 3500px;
+.h-small {
+    height: 250px;
 }
-
+.h-med {
+    height: 350px;
+}
 .h-norm {
+    height: 400px;
+}
+.h-small img {
+    height: 250px;
+}
+.h-med img {
+    height: 350px;
+}
+.h-norm img {
     height: 400px;
 }
 
