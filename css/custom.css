@@ -16,6 +16,9 @@
 .h-norm {
     height: 400px;
 }
+.h-high {
+    height: 500px;
+}
 .h-small img {
     height: 250px;
 }
@@ -24,6 +27,9 @@
 }
 .h-norm img {
     height: 400px;
+}
+.h-high img {
+    height: 500px;
 }
 
 /* 
