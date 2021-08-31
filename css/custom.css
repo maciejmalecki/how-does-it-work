@@ -67,3 +67,8 @@
 .source:hover p, .source:hover ol {
     display: block;
 }
+.white-bg {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
