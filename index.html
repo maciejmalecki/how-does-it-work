@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <title>How does it work?</title>
-  
+
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
   <link rel="stylesheet" href="dist/theme/night.css">
@@ -167,7 +167,7 @@
       <p>Cheap microprocessors: 6502, Z80</p>
       <p>Beyond microcontrollers</p>
     </section>
-    
+
     <section>
       <div class="r-hstack">
         <img src="img/6502CPU.gif" alt="6502 Pinout" class="h-high">
@@ -200,7 +200,7 @@
       <span class="source">
         <ol>
           <li>By MOS_KIM-1_IMG_4211.jpg: Rama &amp; Musée Bolore-framing: Tomer T (talk)scale: Rama - This file has been extracted from another file: MOS KIM-1 IMG 4211.jpg, CC BY-SA 2.0 fr, <a href="https://commons.wikimedia.org/w/index.php?curid=18666108">Link</a></li>
-          <li>By Nicholas Zambetti - http://www.arduino.cc/, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=9182627">Link</a></li>  
+          <li>By Nicholas Zambetti - http://www.arduino.cc/, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=9182627">Link</a></li>
         </ol>
       </span>
     </section>
@@ -309,16 +309,224 @@
       <p>ALU</p>
     </section>
 
-    <!-- #14, #15, #16 -->
     <section>
-      <p>Code execution</p>
-      <ul>
-        <li>Machine code</li>
-        <li>Machine instruction</li>
-        <li>Instruction decoding</li>
-        <li>Instruction counter</li>
-      </ul>
+      <h2>Machine code</h2>
+      <p>
+        <code>169 0 141 32 208 169 1 141 32 208 76 0 192</code>
+      </p>
+
+      <h3 class="fragment">Syntax & Semantic</h3>
+      <div class="r-hstack tiles">
+        <div class="fragment">
+          <pre>
+169   0
+141  32 208
+169   1
+141  32 208
+76    0 192</pre>
+        </div>
+        <div class="fragment">
+          <pre>
+$A9 $00
+$8D $20 $D0
+$A9 $01
+$8D $20 $D0
+$4C $00 $C0</pre>
+        </div>
+        <div class="fragment">
+          <pre>
+$C000 LDA #$00
+$C002 STA $D020
+$C005 LDA #$01
+$C007 STA $D020
+$C00A JMP $C000</pre>
+        </div>
+        <div class="fragment">
+          <pre>
+loop: LDA #$00
+      STA $D020
+      LDA #$01
+      STA $D020
+      JMP loop</pre>
+        </div>
+      </div>
     </section>
+
+    <section>
+      <h3>Instruction set (MOS 6502)</h3>
+      <pre class="small-code">
+ADC   Add Memory to Accumulator with Carry              LDA   Load Accumulator with Memory
+AND   &quot;AND&quot; Memory with Accumulator                     LDX   Load Index X with Memory
+ASL   Shift Left One Bit (Memory or Accumulator)        LDY   Load Index Y with Memory
+                                                        LSR   Shift Right One Bit (Memory or Accumulator)
+BCC   Branch on Carry Clear
+BCS   Branch on Carry Set                               NOP   No Operation
+BEQ   Branch on Result Zero
+BIT   Test Bits in Memory with Accumulator              ORA   &quot;OR&quot; Memory with Accumulator
+BMI   Branch on Result Minus
+BNE   Branch on Result not Zero                         PHA   Push Accumulator on Stack
+BPL   Branch on Result Plus                             PHP   Push Processor Status on Stack
+BRK   Force Break                                       PLA   Pull Accumulator from Stack
+BVC   Branch on Overflow Clear                          PLP   Pull Processor Status from Stack
+BVS   Branch on Overflow Set
+                                                        ROL   Rotate One Bit Left (Memory or Accumulator)
+CLC   Clear Carry Flag                                  ROR   Rotate One Bit Right (Memory or Accumulator)
+CLD   Clear Decimal Mode                                RTI   Return from Interrupt
+CLI   Clear interrupt Disable Bit                       RTS   Return from Subroutine
+CLV   Clear Overflow Flag
+CMP   Compare Memory and Accumulator                    SBC   Subtract Memory from Accumulator with Borrow
+CPX   Compare Memory and Index X                        SEC   Set Carry Flag
+CPY   Compare Memory and Index Y                        SED   Set Decimal Mode
+                                                        SEI   Set Interrupt Disable Status
+DEC   Decrement Memory by One                           STA   Store Accumulator in Memory
+DEX   Decrement Index X by One                          STX   Store Index X in Memory
+DEY   Decrement Index Y by One                          STY   Store Index Y in Memory
+
+INC   Increment Memory by One                           TAX   Transfer Accumulator to Index X
+INX   Increment Index X by One                          TAY   Transfer Accumulator to Index Y
+INY   Increment Index Y by One                          TSX   Transfer Stack Pointer to Index X
+                                                        TXA   Transfer Index X to Accumulator
+JMP   Jump to New Location                              TXS   Transfer Index X to Stack Pointer
+JSR   Jump to New Location Saving Return Address        TYA   Transfer Index Y to Accumulator
+      </pre>
+    </section>
+
+    <section>
+      <h3>AVR instruction set</h3>
+      <div class="tiles r-hstack">
+        <pre class="small-code">
+Arithmetic
+
+ADD   Rd, Rr
+ADC   Rd, Rr
+ADIW  Rp+1:Rp, K6
+
+SUB   Rd, Rr
+SUBI  Rdh, K8
+SBC   Rd, Rr
+SBCI  Rdh, K8
+SBIW  Rp+1:Rp, K6
+
+INC   Rd
+DEC   Rd
+
+AND   Rd, Rr
+ANDI  Rdh, K8
+OR    Rd, Rr
+ORI   Rdh, K8
+COM   Rd
+NEG   Rd
+CP    Rd, Rr
+CPC   Rd, Rr
+CPI   Rdh, K8
+SWAP  Rd
+LSR   Rd
+ROR   Rd
+ASR   Rd
+
+MUL     Rd, Rr
+MULS    Rdh, Rrh
+MULSU   Rdq, Rrq
+FMUL    Rdq, Rrq
+FMULS   Rdq, Rrq
+FMULSU  Rdq, Rrq</pre>
+      <pre class="small-code">
+Bit and others
+
+BSET  s
+BCLR  s
+SBI   IO5, b
+CBI   IO5, b
+BST   Rd, b
+BLD   Rd, b
+
+NOP
+BREAK
+SLEEP
+WDR</pre>
+<pre class="small-code">
+Transfer
+
+MOV  Rd, Rr
+MOVW Rd+1:Rd, Rr+1:Rr
+
+IN    Rd, IO6
+OUT   IO6, Rr
+
+PUSH  Rr
+POP   Rr
+
+LDI   Rdh, K8
+LDS   Rd, D16
+
+LD    Rd, X
+LDD   Rd, YZ+K6
+LD    Rd, -XYZ
+LD    Rd, XYZ+
+
+STS   D16, Rr
+
+ST    X, Rr
+STD   YZ+K6, Rr
+ST    -XYZ, Rr
+ST    XYZ+, Rr
+
+LPM
+LPM   Rd, Z
+LPM   Rd, Z+
+ELPM
+ELPM  Rd, Z
+ELPM  Rd, Z+
+
+SPM</pre>
+<pre class="small-code">
+Jump
+
+RJMP  S12
+IJMP
+EIJMP
+JMP   P22</pre>
+<pre class="small-code">
+Branch
+
+CPSE  Rd, Rr
+
+SBRC  Rr, b
+SBRS  Rr, b
+
+SBIC  IO5, b
+SBIS  IO5, b
+
+BRBC  s, S7
+BRBS  s, S7</pre>
+<pre class="small-code">
+Call
+
+RCALL   S12
+ICALL
+EICALL
+CALL      P22
+
+RET
+RETI</pre>
+    </div>
+  </section>
+
+  <section data-background-image="img/intel-8086-instructions.png">
+  </section>
+
+  <section>
+    <h3>Addressing modes (6502)</h3>
+    <ul>
+      <li><code>LDA #$20</code> - immediate</li>
+      <li><code>LDA $20</code> - absolute zero page</li>
+      <li><code>LDA $D020</code> - absolute</li>
+      <li><code>LDA $C000, X</code>, <code>LDA $C000, Y</code> - absolute indexed</li>
+      <li><code>JMP ($C000)</code> - indirect</li>
+      <li><code>LDA ($20,X)</code> - indirect zero page preindexed X</li>
+      <li><code>LDA ($20),Y</code> - indirect zere page postindexed Y</li>
+    </ul>
+  </section>
 
     <!-- #17, #18 -->
     <section>

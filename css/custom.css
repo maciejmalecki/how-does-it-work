@@ -77,3 +77,15 @@
     padding: 10px;
     border-radius: 10px;
 }
+.reveal .tiles {
+    align-items: flex-start;
+}
+.tiles > div, .tiles > pre {
+    margin: 5px;
+    padding: 5px 15px;
+    background-color: black;
+    border-radius: 5px;
+}
+pre.small-code {
+    font-size: medium;
+}
