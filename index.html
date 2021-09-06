@@ -71,6 +71,23 @@
     </section>
 
     <section>
+      <h3>microprocessor</h3>
+      <p>early Intel</p>
+      <div class="r-hstack h-small">
+        <img src="img/Intel_4004.jpg" alt="Intel 4004">
+        <img src="img/KL_Intel_C8008-1.jpg" alt="Intel 8008">
+        <img src="img/1280px-KL_Intel_i8080_Black_Background.jpg" alt="Intel 8080">
+      </div>
+      <span class="source">
+        <ol>
+          <li>By Original uploader was LucaDetomi at it.wikipedia - Transfered from it.wikipedia, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=858670">Link</a></li>
+          <li>By Konstantin Lanzet - CPU Collection Konstantin LanzetCamera: Canon EOS 400D, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=5694177">Link</a></li>
+          <li>By Konstantin Lanzet - CPU collectionCamera: Canon EOS 400D, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=7028099">Link</a></li>
+        </ol>
+      </span>
+    </section>
+
+    <section>
       <h3>Altair 8800</h3>
       <p>MITS, 1975</p>
       <div class="r-hstack">
@@ -110,13 +127,6 @@
     </section>
 
     <section>
-      <h3>Harvard</h3>
-      <div>
-        <img src="img/harvard.png" alt="Harvard" class="dark-bg h-high">
-      </div>
-    </section>
-
-    <section>
       <h3>von Neumann</h3>
       <div>
         <img src="img/von-neumann.png" alt="von Neumann" class="dark-bg h-high">
@@ -124,30 +134,10 @@
     </section>
 
     <section>
-      <h3>microprocessor</h3>
-      <p>early Intel</p>
-      <div class="r-hstack h-small">
-        <img src="img/Intel_4004.jpg" alt="Intel 4004">
-        <img src="img/KL_Intel_C8008-1.jpg" alt="Intel 8008">
-        <img src="img/1280px-KL_Intel_i8080_Black_Background.jpg" alt="Intel 8080">
+      <h3>Harvard</h3>
+      <div>
+        <img src="img/harvard.png" alt="Harvard" class="dark-bg h-high">
       </div>
-      <span class="source">
-        <ol>
-          <li>By Original uploader was LucaDetomi at it.wikipedia - Transfered from it.wikipedia, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=858670">Link</a></li>
-          <li>By Konstantin Lanzet - CPU Collection Konstantin LanzetCamera: Canon EOS 400D, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=5694177">Link</a></li>
-          <li>By Konstantin Lanzet - CPU collectionCamera: Canon EOS 400D, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=7028099">Link</a></li>
-        </ol>
-      </span>
-    </section>
-
-    <section>
-      <h3>Intel 8008 Architecture</h3>
-      <div class="h-norm white-bg">
-        <img src="img/Intel_8008_arch.svg" alt="Intel 8008 Architecture">
-      </div>
-      <span class="source">
-        <p>By Appaloosa - Own work, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=5229420">Link</a></p>
-      </span>
     </section>
 
     <section>
@@ -160,16 +150,10 @@
       </span>
     </section>
 
-    <!-- #4 -->
     <section>
-      <p>Cheap microprocessors: 6502, Z80</p>
-      <p>Beyond microcontrollers</p>
-    </section>
-
-    <section>
-      <div class="r-hstack">
+      <div class="r-hstack white-bg">
         <img src="img/6502CPU.gif" alt="6502 Pinout" class="h-high">
-        <img src="img/6502-schema.png" alt="6502" class="h-high">
+        <img src="img/6502Chip.gif" alt="6502" class="h-high">
       </div>
       <span class="source">
         <p><a href="https://hackaday.io/project/21496-fpga-nes/log/58495-cpu-overview">Link</a></p>
@@ -563,7 +547,7 @@ RETI</pre>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script src="plugin/zoom/zoom.js"></script>
-<script src="plugin/chalkboard/plugin.js"></script>
+
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -574,7 +558,8 @@ RETI</pre>
         slideNumber: 'c/t',
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealChalkboard]
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+        dependencies: [ { src: "plugin/mouse-pointer/mouse-pointer.js", async: true } ]
     });
 </script>
 </body>
