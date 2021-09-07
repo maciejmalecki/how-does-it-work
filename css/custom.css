@@ -31,8 +31,11 @@
 .h-high img {
     height: 500px;
 }
+.w-norm img {
+    width: 650px;
+}
 
-/* 
+/*
  * Image source "on hover" handling.
  */
 .source p, .source ol {
