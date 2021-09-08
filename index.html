@@ -26,23 +26,6 @@
       <div class="signature">Maciej Małecki, Capgemini IoT Community, Wrocław 2021.</div>
     </section>
 
-    <!--
-    <section>
-      <h3>Motivation</h3>
-      <div class="r-hstack">
-        <img src="img/c64-pcb.jpg" alt="C64 PCB" style="height: 450px;">
-        <div class="fragment" data-fragment-index="1">&rarr;</div>
-        <img class="fragment" data-fragment-index="1" src="img/c64-fixed.jpg" alt="C64 PCB" style="height: 450px;">
-      </div>
-      <span class="source">
-        <ol>
-          <li>&copy; Maciej Małecki</li>
-          <li>&copy; Maciej Małecki</li>
-        </ol>
-      </span>
-    </section>
-    -->
-
     <section>
       <h2 class="r-fit-text">is this presentation</h2>
       <h2 class="r-fit-text">for me?</h2>
@@ -58,10 +41,13 @@
       <h3>"microcomputer" ???</h3>
       <div class="r-vstack">
         <div class="r-hstack">
-          <img src="img/960px-IBM_System360_Mainframe.jpg" alt="Mainframe" style="height: 230px;">
-          <img src="img/pdp-8.jpg" alt="PDP-8 Minicomputer" style="height: 230px;" class="fragment">
+          <img src="img/960px-IBM_System360_Mainframe.jpg" alt="Mainframe" style="height: 220px;" class="fragment">
+          <img src="img/pdp-8.jpg" alt="PDP-8 Minicomputer" style="height: 220px;" class="fragment">
         </div>
-        <img src="img/1280px-Trinity77.jpg" alt="Trinity 77" style="height: 230px;" class="fragment">
+        <img src="img/1280px-Trinity77.jpg" alt="Trinity 77" style="height: 220px;" class="fragment">
+      </div>
+      <div class="fragment">
+        ~$2.000.000, ~$20.000, ~$1.000
       </div>
       <span class="source">
         <ol>
@@ -253,16 +239,14 @@
   </section>
 
     <section>
-      <h3>How to write to RAM?</h3>
-      <div class="h-norm dark-bg fragment">
-        <img src="img/write-cycle.png" alt="Write">
-      </div>
-    </section>
-
-    <section>
-      <h3>How to read from RAM?</h3>
-      <div class="h-norm dark-bg">
-        <img src="img/read-cycle.png" alt="Read">
+      <h3>How to access the RAM?</h3>
+      <div class="r-hstack">
+        <div class="h-norm">
+          <img src="img/read-cycle.png" alt="Read">
+        </div>
+          <div class="h-norm fragment">
+          <img src="img/write-cycle.png" alt="Write">
+        </div>  
       </div>
     </section>
 
@@ -277,49 +261,6 @@
           <li>By Bill Bertram - Own work, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=473295</li>
         </ol>
       </span>
-    </section>
-
-    <section data-background-image="img/so-logo.jpg">
-    </section>
-
-    <section>
-      <h3>Stack</h3>
-      <h4>based on MOS 6502</h4>
-      <div class="r-hstack">
-        <div>
-            <ul>
-              <li><code>PHA</code> - push accumulator (A)</li>
-              <li><code>PLA</code> - pull accumulator (A)</li>
-              <li><code>PHP</code> - push status (S)</li>
-              <li><code>PLP</code> - pull status (S)</li>
-              <li><code>JSR $xxxx</code> - jump to subroutine</li>
-              <li><code>RET</code> - return from subroutine</li>
-              <li><code>RTI</code> - return from interrupt</li>
-            </ul>
-        </div>
-        <div>
-          <img src="img/stack.png" alt="Stack" style="width: 350px;">
-        </div>
-      </div>
-    </section>
-
-    <!-- #12, #13 -->
-    <section>
-      <h3>ALU</h3>
-      <div class="r-hstack">
-          <div>
-            <ul>
-              <li><code>ADC $xxxx</code> - add to accumulator with carry</li>
-              <li><code>SBC $xxxx</code> - subtract from accumulator with carry</li>
-              <li><code>AND $xxxx</code> - bitwise AND</li>
-              <li><code>EOR $xxxx</code> - exclusive OR</li>
-              <li><code>SLR $xxxx</code> - shift right</li>
-            </ul>
-          </div>
-          <div class="white-bg">
-            <img src="img/6502-alu.png" alt="ALU" class="h-high">
-          </div>
-        </div>
     </section>
 
     <section>
@@ -530,18 +471,79 @@ RETI</pre>
 
   <section>
     <h3>Addressing modes (6502)</h3>
-    <ul>
-      <li><code>LDA #$20</code> - immediate</li>
-      <li><code>LDA $20</code> - absolute zero page</li>
-      <li><code>LDA $D020</code> - absolute</li>
-      <li><code>LDA $C000, X</code>, <code>LDA $C000, Y</code> - absolute indexed</li>
-      <li><code>JMP ($C000)</code> - indirect</li>
-      <li><code>LDA ($20,X)</code> - indirect zero page preindexed X</li>
-      <li><code>LDA ($20),Y</code> - indirect zere page postindexed Y</li>
-    </ul>
+    <div class="r-hstack">
+      <div class="mid-code">
+        <ul>
+          <li><code>LDA #$20</code> - immediate</li>
+          <li><code>LDA $20</code> - absolute zero page</li>
+          <li><code>LDA $D020</code> - absolute</li>
+          <li><code>LDA $C000, X</code>, <code>LDA $C000, Y</code> - absolute indexed</li>
+          <li><code>JMP ($C000)</code> - indirect</li>
+          <li><code>LDA ($20,X)</code> - indirect zero page preindexed X</li>
+          <li><code>LDA ($20),Y</code> - indirect zere page postindexed Y</li>
+        </ul>
+      </div>
+      <div><pre class="mid-code">
+        +----------------+-----------------------+---------+---------+----------+
+        | Addressing Mode| Assembly Language Form| OP CODE |No. Bytes|No. Cycles|
+        +----------------+-----------------------+---------+---------+----------+
+        |  Immediate     |   LDA #$FF            |   $A9   |    2    |    2     |
+        |  ZeroPage      |   LDA $FF             |   $A5   |    2    |    3     |
+        |  ZeroPage,X    |   LDA $FF,X           |   $B5   |    2    |    4     |
+        |  Absolute      |   LDA $FFFF           |   $AD   |    3    |    4     |
+        |  Absolute,X    |   LDA $FFFF,X         |   $BD   |    3    |    4*    |
+        |  Absolute,Y    |   LDA $FFFF,Y         |   $B9   |    3    |    4*    |
+        |  (Indirect,X)  |   LDA ($FF,X)         |   $A1   |    2    |    6     |
+        |  (Indirect),Y  |   LDA ($FF),Y         |   $B1   |    2    |    5*    |
+        +----------------+-----------------------+---------+---------+----------+</pre>
+      </div>
+    </div>
   </section>
 
-    <!-- #17, #18 -->
+  <section data-background-image="img/so-logo.jpg">
+  </section>
+
+  <section>
+    <h3>Stack</h3>
+    <h4>based on MOS 6502</h4>
+    <div class="r-hstack">
+      <div>
+          <ul>
+            <li><code>PHA</code> - push accumulator (A)</li>
+            <li><code>PLA</code> - pull accumulator (A)</li>
+            <li><code>PHP</code> - push status (S)</li>
+            <li><code>PLP</code> - pull status (S)</li>
+            <li><code>JSR $xxxx</code> - jump to subroutine</li>
+            <li><code>RET</code> - return from subroutine</li>
+            <li><code>RTI</code> - return from interrupt</li>
+          </ul>
+      </div>
+      <div>
+        <img src="img/stack.png" alt="Stack" style="width: 350px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- #12, #13 -->
+  <section>
+    <h3>ALU</h3>
+    <div class="r-hstack">
+        <div>
+          <ul>
+            <li><code>ADC $xxxx</code> - add to accumulator with carry</li>
+            <li><code>SBC $xxxx</code> - subtract from accumulator with carry</li>
+            <li><code>AND $xxxx</code> - bitwise AND</li>
+            <li><code>EOR $xxxx</code> - exclusive OR</li>
+            <li><code>SLR $xxxx</code> - shift right</li>
+          </ul>
+        </div>
+        <div class="white-bg">
+          <img src="img/6502-alu.png" alt="ALU" class="h-high">
+        </div>
+      </div>
+  </section>
+
+  <!-- #17, #18 -->
     <section>
       <h3>Interrupts</h3>
       <div class="white-bg r-hstack">

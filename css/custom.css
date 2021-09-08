@@ -89,6 +89,9 @@
     background-color: black;
     border-radius: 5px;
 }
-pre.small-code {
+pre.small-code, .small-code {
     font-size: medium;
+}
+pre.mid-code, .mid-code {
+    font-size: large;
 }
