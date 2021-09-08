@@ -73,6 +73,20 @@
     </section>
 
     <section>
+      <h3>KIM-1, Apple I; 1976</h3>
+      <div class="r-hstack">
+        <img src="img/kim-1-pcb.jpg" alt="KIM-1" class="h-norm">
+        <img src="img/1252px-CopsonApple1_2k_cropped.jpg" alt="Apple I" class="h-norm">
+      </div>
+      <span class="source">
+        <ol>
+          <li>By MOS_KIM-1_IMG_4211.jpg: Rama &amp; Musée Bolore-framing: Tomer T (talk)scale: Rama - This file has been extracted from another file: MOS KIM-1 IMG 4211.jpg, CC BY-SA 2.0 fr, <a href="https://commons.wikimedia.org/w/index.php?curid=18666108">Link</a></li>
+          <li>By Achim Baqué - https://www.apple1registry.com/en/press.html, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/w/index.php?curid=109364693">Link</a></li>
+        </ol>
+      </span>
+    </section>
+
+    <section>
       <h3>microprocessor</h3>
       <p>early Intel</p>
       <div class="r-hstack h-small">
@@ -143,8 +157,8 @@
     </section>
 
     <section>
-      <h3>Intel 8088/8086 Architecture</h3>
-      <div class="h-norm white-bg">
+      <h3>Intel 8088/8086</h3>
+      <div class="h-norm white-bg"> 
         <img src="img/block-diagram-of-intel-8086.png" alt="8086">
       </div>
       <span class="source">
@@ -153,12 +167,23 @@
     </section>
 
     <section>
+      <h3>MOS Technology 6502</h3>
       <div class="r-hstack white-bg">
         <img src="img/6502CPU.gif" alt="6502 Pinout" class="h-high">
         <img src="img/6502Chip.gif" alt="6502" class="h-high">
       </div>
       <span class="source">
         <p><a href="https://hackaday.io/project/21496-fpga-nes/log/58495-cpu-overview">Link</a></p>
+      </span>
+    </section>
+
+    <section>
+      <h3>Atmel AVR</h3>
+      <div>
+        <img src="img/AVR_Architecture.GIF" alt="AVR">
+      </div>
+      <span class="source">
+        <p><a href="http://exploreembedded.com/wiki/File:AVR_Architecture.GIF">http://exploreembedded.com/wiki/File:AVR_Architecture.GIF</a></p>
       </span>
     </section>
 
@@ -176,35 +201,6 @@
         </ol>
       </span>
     </section>
-
-    <!-- #5 -->
-    <!--
-    <section>
-      <h3>KIM-1</h3>
-      <p>MOS Technology, Inc., 1976</p>
-      <div class="r-hstack">
-        <img src="img/kim-1-pcb.jpg" alt="KIM-1" class="h-norm">
-        <img src="img/1034px-Arduino316.jpg" alt="Arduino Uno" class="h-norm fragment">
-      </div>
-      <span class="source">
-        <ol>
-          <li>By MOS_KIM-1_IMG_4211.jpg: Rama &amp; Musée Bolore-framing: Tomer T (talk)scale: Rama - This file has been extracted from another file: MOS KIM-1 IMG 4211.jpg, CC BY-SA 2.0 fr, <a href="https://commons.wikimedia.org/w/index.php?curid=18666108">Link</a></li>
-          <li>By Nicholas Zambetti - http://www.arduino.cc/, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=9182627">Link</a></li>
-        </ol>
-      </span>
-    </section>
-
-    <section>
-      <h3>Apple I</h3>
-      <p>1976</p>
-      <div>
-        <img src="img/1252px-CopsonApple1_2k_cropped.jpg" alt="Apple I" class="h-norm">
-      </div>
-      <span class="source">
-        <p>By Achim Baqué - https://www.apple1registry.com/en/press.html, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/w/index.php?curid=109364693">Link</a></p>
-      </span>
-    </section>
-  -->
 
     <!-- #7 -->
     <section>
@@ -296,13 +292,13 @@
               <li><code>PLA</code> - pull accumulator (A)</li>
               <li><code>PHP</code> - push status (S)</li>
               <li><code>PLP</code> - pull status (S)</li>
-              <li><code>JSR</code> - jump to subroutine</li>
+              <li><code>JSR $xxxx</code> - jump to subroutine</li>
               <li><code>RET</code> - return from subroutine</li>
               <li><code>RTI</code> - return from interrupt</li>
             </ul>
         </div>
         <div>
-
+          <img src="img/stack.png" alt="Stack" style="width: 350px;">
         </div>
       </div>
     </section>
@@ -310,9 +306,20 @@
     <!-- #12, #13 -->
     <section>
       <h3>ALU</h3>
-      <div class="white-bg">
-        <img src="img/6502-alu.png" alt="ALU" class="h-norm">
-      </div>
+      <div class="r-hstack">
+          <div>
+            <ul>
+              <li><code>ADC $xxxx</code> - add to accumulator with carry</li>
+              <li><code>SBC $xxxx</code> - subtract from accumulator with carry</li>
+              <li><code>AND $xxxx</code> - bitwise AND</li>
+              <li><code>EOR $xxxx</code> - exclusive OR</li>
+              <li><code>SLR $xxxx</code> - shift right</li>
+            </ul>
+          </div>
+          <div class="white-bg">
+            <img src="img/6502-alu.png" alt="ALU" class="h-high">
+          </div>
+        </div>
     </section>
 
     <section>
